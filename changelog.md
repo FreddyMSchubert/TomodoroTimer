@@ -1,5 +1,9 @@
 # TomodoroTimer Changelog
 
+## v1.0.0 - 08.10.12
+- Implemented all of the Tom Voicelines
+- Project is feature-complete (for now), released under https://tomodoro.net/
+
 ### v0.3.0 - 08.10.23
 - Changed buttons to work with hotkeys instead
 - Added Ascii Emojis that get displayed as the face of Tommy.

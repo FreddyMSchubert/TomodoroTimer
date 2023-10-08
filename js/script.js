@@ -43,13 +43,13 @@ function togglePlayPause()
 	isRunning = !isRunning;
 
 	if (isRunning)
-	{
+	{	
 		getTomCaption(isWorkMode, false).then(result => {
 			currentCaption = result.text;
 			currentFace = result.face;
 			updateDisplay();
 		});
-		
+
 		intervalId = setInterval(() =>
 		{
 			timeLeft--;
@@ -68,7 +68,6 @@ function toggleMode()
     isWorkMode = !isWorkMode;
     timeLeft = isWorkMode ? workTime : breakTime;
     
-    // Get a new caption for the next mode
     getTomCaption(isWorkMode, false).then(result => {
         currentCaption = result.text;
 		currentFace = result.face;
