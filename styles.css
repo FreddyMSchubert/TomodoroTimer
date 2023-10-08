@@ -2,6 +2,7 @@
 :root {
   --first-color: #000000;
   --second-color: #00ff00;
+  --link-color: #ffffff;
 }
 body {
   font-family: 'Courier New', Monaco, Consolas, 'Lucida Console', monospace;
@@ -9,10 +10,10 @@ body {
   background-color: var(--first-color);
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
+}
+a {
+  color: var(--link-color);
 }
 
 
@@ -36,6 +37,30 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+
+/* Bottom stuff */
+#shortcuts-overview {
+  text-align: left;
+  margin: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+#signature {
+  text-align: right;
+  margin: 10px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+#whatispomodoro {
+  text-align: right;
+  margin: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 
@@ -67,7 +92,6 @@ body {
   width: 300px;
   margin: 0 auto;
 }
-
 .task {
   display: flex;
   align-items: center;
@@ -78,26 +102,7 @@ body {
   cursor: move;
 }
 
-.task:hover .deleteBtn {
-  visibility: visible;
-}
-
-.task .deleteBtn {
-  visibility: hidden;
-  cursor: pointer;
-}
-
-.task input[type="checkbox"] {
-  margin-right: 10px;
-}
-
 .completed {
   text-decoration: line-through;
   color: grey;
-}
-
-.placeholder {
-  border: var(--first-color);
-  margin-bottom: 5px;
-  height: 40px;  /* adjust height to match your tasks */
 }

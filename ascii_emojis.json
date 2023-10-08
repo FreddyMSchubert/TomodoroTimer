@@ -2,107 +2,107 @@
 	"ascii_emojis": [
 		{
 			"key": "innocent_face",
-			"emoji": "(ʘ‿ʘ)"
+			"face": "(ʘ‿ʘ)"
 		},
 		{
 			"key": "reddit_disapproval_face",
-			"emoji": "ಠ_ಠ"
+			"face": "ಠ_ಠ"
 		},
 		{
 			"key": "table_flip",
-			"emoji": "(╯°□°）╯︵ ┻━┻"
+			"face": "(╯°□°）╯︵ ┻━┻"
 		},
 		{
 			"key": "cute_bear",
-			"emoji": "ʕ•ᴥ•ʔ"
+			"face": "ʕ•ᴥ•ʔ"
 		},
 		{
 			"key": "squinting_bear",
-			"emoji": "ʕᵔᴥᵔʔ"
+			"face": "ʕᵔᴥᵔʔ"
 		},
 		{
 			"key": "cute_face_big_eyes",
-			"emoji": "(｡◕‿◕｡)"
+			"face": "(｡◕‿◕｡)"
 		},
 		{
 			"key": "excited",
-			"emoji": "☜(⌒▽⌒)☞"
+			"face": "☜(⌒▽⌒)☞"
 		},
 		{
 			"key": "running",
-			"emoji": "ε=ε=ε=┌(;*´Д`)ﾉ"
+			"face": "ε=ε=ε=┌(;*´Д`)ﾉ"
 		},
 		{
 			"key": "happy_face",
-			"emoji": "ヽ(´▽`)/"
+			"face": "ヽ(´▽`)/"
 		},
 		{
 			"key": "flexing_muscles",
-			"emoji": "ᕙ(⇀‸↼‶)ᕗ"
+			"face": "ᕙ(⇀‸↼‶)ᕗ"
 		},
 		{
 			"key": "do_you_even_lift_bro",
-			"emoji": "ᕦ(ò_óˇ)ᕤ"
+			"face": "ᕦ(ò_óˇ)ᕤ"
 		},
 		{
 			"key": "worried",
-			"emoji": "(´･_･`)"
+			"face": "(´･_･`)"
 		},
 		{
 			"key": "staring",
-			"emoji": "٩(๏_๏)۶"
+			"face": "٩(๏_๏)۶"
 		},
 		{
 			"key": "zoned",
-			"emoji": "(⊙_◎)"
+			"face": "(⊙_◎)"
 		},
 		{
 			"key": "look_over_there",
-			"emoji": "(づ｡◕‿‿◕｡)づ"
+			"face": "(づ｡◕‿‿◕｡)づ"
 		},
 		{
 			"key": "dancing",
-			"emoji": "┌(ㆆ㉨ㆆ)ʃ"
+			"face": "┌(ㆆ㉨ㆆ)ʃ"
 		},
 		{
 			"key": "love",
-			"emoji": "(♥‿♥)"
+			"face": "(♥‿♥)"
 		},
 		{
 			"key": "kissing",
-			"emoji": "( ˘ ³˘)♥ "
+			"face": "( ˘ ³˘)♥ "
 		},
 		{
 			"key": "opera",
-			"emoji": "ヾ(´〇`)ﾉ♪♪♪"
+			"face": "ヾ(´〇`)ﾉ♪♪♪"
 		},
 		{
 			"key": "zombie",
-			"emoji": "[¬º-°]¬"
+			"face": "[¬º-°]¬"
 		},
 		{
 			"key": "gimme_a_hug",
-			"emoji": "(⊃｡•́‿•̀｡)⊃"
+			"face": "(⊃｡•́‿•̀｡)⊃"
 		},
 		{
 			"key": "woah_magic",
-			"emoji": "(∩｀-´)⊃━☆ﾟ.*･｡ﾟ"
+			"face": "(∩｀-´)⊃━☆ﾟ.*･｡ﾟ"
 		},
 		{
 			"key": "yum",
-			"emoji": "(っ˘ڡ˘ς)"
+			"face": "(っ˘ڡ˘ς)"
 		},
 		{
 			"key": "erm",
-			"emoji": "( ఠ ͟ʖ ఠ)"
+			"face": "( ఠ ͟ʖ ఠ)"
 		},
 		{
 			"key": "fck_off",
-			"emoji": "(° ͜ʖ͡°)╭∩╮"
+			"face": "(° ͜ʖ͡°)╭∩╮"
 		},
 		{
 			"key": "happy_hug",
-			"emoji": "\\(ᵔᵕᵔ)/"
+			"face": "\\(ᵔᵕᵔ)/"
 		}
 	]
 }

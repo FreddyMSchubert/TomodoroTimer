@@ -37,7 +37,7 @@ function formatTimeCodeAsSevenDigitDisplay(timecode) {
     return result;
 }
 
-function createBox(text, sevenSegmentDisplay) {
+function createBox(text, sevenSegmentDisplay, face) {
     const lines = text.split('\n');
     let result = '';
   
@@ -65,11 +65,15 @@ function createBox(text, sevenSegmentDisplay) {
     // Bottom border
     result += '\\' + '-'.repeat(boxWidth - 2 - 2) + '__ \\' + '\n';
     result += ' '.repeat(boxWidth - 1) + '\\|' + '\n';
+
+    // Tom Face
+    result += '\n';
+    result += ' '.repeat(boxWidth - 2) + face;
   
     return result;
 }
 
-function updateTextBox(isWorkMode, caption, timecode)
+function updateTextBox(isWorkMode, caption, face, timecode)
 {
 	let text = "";
 	text += isWorkMode ? "    <<<<<   WORK   >>>>>    \n" : "    <<<<<   BREAK  >>>>>    \n";
@@ -96,7 +100,7 @@ function updateTextBox(isWorkMode, caption, timecode)
 
 	let sevenSegmentDisplay = formatTimeCodeAsSevenDigitDisplay(timecode);
 
-	let textBox = createBox(text, sevenSegmentDisplay);
+	let textBox = createBox(text, sevenSegmentDisplay, face);
 
 	return textBox;
 }

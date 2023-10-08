@@ -18,11 +18,6 @@
 
 			<div id="timer-container">
 				<div id="time" class="preserve-spaces">Loading...</div>
-				<div id="controls">
-					<button id="play-pause">|></button><button id="reset">&lt;-</button><button id="skip">-&gt;</button>
-					<br>
-					<button id="settings-button">...</button>
-				</div>
 			</div>
 		  
 			<div id="todo-container" class="hidden">
@@ -32,6 +27,25 @@
 		  
 		</div>
 
+		<div id="shortcuts-overview" class="distraction">
+			SPACE -> Play / Pause<br>
+			R&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> Restart<br>
+			S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> Skip<br>
+			F&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> Fullscreen<br>
+			D&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> Distractions On / Off<br>
+			O&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-> Options<br>
+		</div>
+
+		<div id="signature" class="distraction">
+			⊂(◉‿◉)つ Created by <a href="https://frederickschubert.de" target="_blank">Frederick Schubert</a>.<br>
+			If you like Tom, please consider <a href="someone put a kofi link here" target="_blank">supporting my work</a>.
+		</div>
+
+		<div id="whatispomodoro" class="distraction">
+			<a href="https://youtu.be/IlU-zDU6aQ0?si=ntdJHcQhIszd_nMq&t=387" target="_blank">What is the pomodoro technique?</a>
+		</div>
+
+		<!-- POPUPS -->
 
 		<div id="popup" class="hidden">
 			<div class="settings-content">
@@ -43,16 +57,18 @@
 
 				<br>
 
-				<input type="color" value="#00ff00" id="foregroundColorInput"><label for="foregroundColorInput"> Font Color</label><br>
-				<input type="color" value="#000000" id="backgroundColorInput"><label for="backgroundColorInput"> Background Color</label><br>
-
-				<br>
-
 				<input type="checkbox" checked id="startBreakAutomatically"><label for="startBreakAutomatically">Start Break Automatically</label><br>
 				<input type="checkbox" id="startWorkAutomatically"><label for="startWorkAutomatically">Start Work Automatically</label><br>
 
+				<br>
+
+				<input type="color" value="#00ff00" id="foregroundColorInput"><label for="foregroundColorInput"> Font Color</label><br>
+				<input type="color" value="#000000" id="backgroundColorInput"><label for="backgroundColorInput"> Background Color</label><br>
+
 			</div>
 		</div>
+
+		<!-- JS -->
 
 		<script src="js/tom.js"></script>
 		<script src="js/textBoxManager.js"></script>

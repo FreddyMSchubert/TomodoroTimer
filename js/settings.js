@@ -1,19 +1,13 @@
-const button = document.getElementById('settings-button');
 const popup = document.getElementById('popup');
 
-button.addEventListener('click', () => {
-  popup.classList.toggle('hidden');
-});
-
 document.addEventListener('click', (event) => {
-  if (event.target !== popup && event.target !== button && !popup.contains(event.target)) {
+  if (event.target !== popup && !popup.contains(event.target)) {
     popup.classList.add('hidden');
   }
 });
 
 
 
-// Function to update the work and break times
 function updateTimes()
 {
     const workDurationInput = document.getElementById('workDurationInput');
@@ -21,17 +15,20 @@ function updateTimes()
     workTime = workDurationInput.value * 60;
     breakTime = breakDurationInput.value * 60;
 }
-
-// Function to update the CSS variables for colors
 function updateColors()
 {
     const foregroundColorInput = document.getElementById('foregroundColorInput');
     const backgroundColorInput = document.getElementById('backgroundColorInput');
     document.documentElement.style.setProperty('--second-color', foregroundColorInput.value);
     document.documentElement.style.setProperty('--first-color', backgroundColorInput.value);
-}
 
-// Function to update the auto continue behaviour for the different modes
+    // calculate the new color for readable links
+    const r = parseInt(backgroundColorInput.value.slice(1, 3), 16);
+    const g = parseInt(backgroundColorInput.value.slice(3, 5), 16);
+    const b = parseInt(backgroundColorInput.value.slice(5, 7), 16);
+    const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+    document.documentElement.style.setProperty('--link-color', luminance > 0.5 ? '#000000' : '#ffffff');
+}
 function updateAutoContinue()
 {
   const startWorkAutomaticallyUpdated = document.getElementById('startWorkAutomatically').checked;
@@ -40,7 +37,6 @@ function updateAutoContinue()
   startWorkAutomatically = startWorkAutomaticallyUpdated;
 }
 
-// Add event listeners to the input fields
 document.getElementById('workDurationInput').addEventListener('input', updateTimes);
 document.getElementById('breakDurationInput').addEventListener('input', updateTimes);
 document.getElementById('foregroundColorInput').addEventListener('input', updateColors);

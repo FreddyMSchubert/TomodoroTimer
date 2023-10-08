@@ -1,70 +1,95 @@
 const taskInput = document.getElementById('taskInput');
 const taskList = document.getElementById('taskList');
 
-taskInput.addEventListener('keypress', function(e) {
-    if (e.key === 'Enter') {
-        e.preventDefault();  // Prevents form submission in some cases
-        const trimmedValue = e.target.value.trim();
-        if (trimmedValue) {
-            addTask(trimmedValue);
-            e.target.value = '';
-        }
+let dragged;
+
+function addTask() {
+    const taskText = taskInput.value;
+    if (taskText) {
+        const li = document.createElement('li');
+        li.classList.add("task");
+
+        // checkbox
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.addEventListener('change', function() {
+            if (this.checked) {
+                li.classList.add('completed');
+            } else {
+                li.classList.remove('completed');
+            }
+        });
+        li.appendChild(checkbox);
+
+        const textContainer = document.createElement('div');
+        textContainer.style.flexGrow = "1";
+        textContainer.style.textAlign = "center";
+        const span = document.createElement('span');
+        span.textContent = taskText;
+        textContainer.appendChild(span);
+        li.appendChild(textContainer);
+
+        const editButton = document.createElement('button');
+        editButton.textContent = "(edit)";
+        editButton.addEventListener('click', function() {
+            span.contentEditable = "true";
+            saveButton.style.display = "inline-block";
+            deleteButton.style.display = "inline-block";
+            editButton.style.display = "none";
+        });
+        li.appendChild(editButton);
+
+        const saveButton = document.createElement('button');
+        saveButton.textContent = "(save)";
+        saveButton.style.display = "none";
+        saveButton.addEventListener('click', function() {
+            span.contentEditable = "false";
+            saveButton.style.display = "none";
+            deleteButton.style.display = "none";
+            editButton.style.display = "inline-block";
+        });
+        li.appendChild(saveButton);
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = "(delete)";
+        deleteButton.style.display = "none";
+        deleteButton.addEventListener('click', function() {
+            taskList.removeChild(li);
+        });
+        li.appendChild(deleteButton);
+
+        li.draggable = true;
+        li.addEventListener('dragstart', (event) => {
+            dragged = event.target;
+            event.target.style.opacity = 0;
+        });
+        li.addEventListener('dragend', (event) => {
+            event.target.style.opacity = "";
+        });
+        taskList.appendChild(li);
+        taskInput.value = '';
     }
+}
+
+taskList.addEventListener('dragover', (event) => {
+    event.preventDefault();
 });
 
-function addTask(taskText) {
-    const task = document.createElement('div');
-    task.className = 'task';
-    task.draggable = true;
-    task.innerHTML = `
-        <input type="checkbox" onchange="toggleCompletion(this)">
-        <span>${taskText}</span>
-        <span class="deleteBtn" onclick="deleteTask(this)">X</span>
-    `;
-    taskList.appendChild(task);
-}
-
-function toggleCompletion(checkbox) {
-    const task = checkbox.closest('.task');
-    task.classList.toggle('completed');
-}
-
-function deleteTask(deleteBtn) {
-    const task = deleteBtn.closest('.task');
-    taskList.removeChild(task);
-}
-
-// Drag and Drop functionality
-let draggedTask = null;
-let placeholder = null;
-
-taskList.addEventListener('dragstart', function(e) {
-    draggedTask = e.target;
-
-    placeholder = document.createElement('div');
-    placeholder.className = 'placeholder';
-    draggedTask.style.opacity = '0.5';
-    taskList.insertBefore(placeholder, draggedTask);
-});
-
-taskList.addEventListener('dragover', function(e) {
-    e.preventDefault();
-    const hoveredTask = e.target.closest('.task');
-    if (hoveredTask) {
-        const rect = hoveredTask.getBoundingClientRect();
-        const offset = e.clientY - rect.top - rect.height / 2;
-        if (offset > 0) {
-            hoveredTask.after(placeholder);
+taskList.addEventListener('dragenter', (event) => {
+    if (event.target.className === 'task') {
+        const rect = event.target.getBoundingClientRect();
+        const y = event.clientY - rect.top;
+        if (y < rect.height / 2) {
+            taskList.insertBefore(dragged, event.target);  // Place before the item being dragged over
         } else {
-            hoveredTask.before(placeholder);
+            taskList.insertBefore(dragged, event.target.nextSibling);  // Place after
         }
     }
 });
 
-taskList.addEventListener('dragend', function() {
-    draggedTask.style.opacity = '';  // Reset opacity
-    taskList.insertBefore(draggedTask, placeholder);
-    taskList.removeChild(placeholder);
-    draggedTask = null;
-    placeholder = null;
+document.getElementById('taskInput').addEventListener('keydown', function(e) {
+    if (e.code === 'Enter') {
+        addTask();
+        e.preventDefault();  // Prevents the default action to avoid any unforeseen mischief
+    }
 });
