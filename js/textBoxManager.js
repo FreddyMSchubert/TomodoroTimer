@@ -63,7 +63,8 @@ function createBox(text, sevenSegmentDisplay) {
     }
   
     // Bottom border
-    result += '\\' + '-'.repeat(boxWidth - 2) + '/' + '\n';
+    result += '\\' + '-'.repeat(boxWidth - 2 - 2) + '__ \\' + '\n';
+    result += ' '.repeat(boxWidth - 1) + '\\|' + '\n';
   
     return result;
 }

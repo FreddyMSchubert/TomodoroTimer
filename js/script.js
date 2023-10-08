@@ -4,6 +4,9 @@ let breakTime = 5 * 60;
 let isWorkMode = true;
 let isRunning = false;
 
+let startWorkAutomatically = false;
+let startBreakAutomatically = true;
+
 let intervalId;
 let timeLeft = workTime;
 
@@ -24,6 +27,10 @@ function updateDisplay()
 	seconds = seconds < 10 ? '0' + seconds : seconds;
 		
 	document.getElementById('time').innerText = updateTextBox(isWorkMode, currentCaption, `${minutes}:${seconds}`);
+
+	// webpage title
+	let mode_emoji = isWorkMode ? '👩‍💻' : '☕️';
+	document.title = `${mode_emoji} ${minutes}:${seconds} | P0M0D0R0 T1M3R`;
 }
 
 
@@ -46,7 +53,7 @@ function togglePlayPause()
 			if (timeLeft <= 0)
 				toggleMode();
 			updateDisplay();
-		}, 1000);
+		}, 10);
 	}
 	else
 	{
@@ -55,13 +62,23 @@ function togglePlayPause()
 }
 function toggleMode()
 {
-	isWorkMode = !isWorkMode;
-	timeLeft = isWorkMode ? workTime : breakTime;
-	getTomCaption(isWorkMode, false).then(result => {
-		currentCaption = result;
-		updateDisplay();
-	});
-	updateDisplay();
+    isWorkMode = !isWorkMode;
+    timeLeft = isWorkMode ? workTime : breakTime;
+    
+    // Get a new caption for the next mode
+    getTomCaption(isWorkMode, false).then(result => {
+        currentCaption = result;
+        updateDisplay();
+    });
+
+    if (isRunning) {
+        if ((isWorkMode && startWorkAutomatically) || (!isWorkMode && startBreakAutomatically)) {
+        } else {
+            togglePlayPause();
+        }
+    }
+    
+    updateDisplay();
 }
 function resetTimer()
 {

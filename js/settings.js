@@ -14,7 +14,8 @@ document.addEventListener('click', (event) => {
 
 
 // Function to update the work and break times
-function updateTimes() {
+function updateTimes()
+{
     const workDurationInput = document.getElementById('workDurationInput');
     const breakDurationInput = document.getElementById('breakDurationInput');
     workTime = workDurationInput.value * 60;
@@ -22,11 +23,21 @@ function updateTimes() {
 }
 
 // Function to update the CSS variables for colors
-function updateColors() {
+function updateColors()
+{
     const foregroundColorInput = document.getElementById('foregroundColorInput');
     const backgroundColorInput = document.getElementById('backgroundColorInput');
     document.documentElement.style.setProperty('--second-color', foregroundColorInput.value);
     document.documentElement.style.setProperty('--first-color', backgroundColorInput.value);
+}
+
+// Function to update the auto continue behaviour for the different modes
+function updateAutoContinue()
+{
+  const startWorkAutomaticallyUpdated = document.getElementById('startWorkAutomatically').checked;
+  const startBreakAutomaticallyUpdated = document.getElementById('startBreakAutomatically').checked;
+  startBreakAutomatically = startBreakAutomaticallyUpdated;
+  startWorkAutomatically = startWorkAutomaticallyUpdated;
 }
 
 // Add event listeners to the input fields
@@ -34,3 +45,5 @@ document.getElementById('workDurationInput').addEventListener('input', updateTim
 document.getElementById('breakDurationInput').addEventListener('input', updateTimes);
 document.getElementById('foregroundColorInput').addEventListener('input', updateColors);
 document.getElementById('backgroundColorInput').addEventListener('input', updateColors);
+document.getElementById('startWorkAutomatically').addEventListener('input', updateAutoContinue);
+document.getElementById('startBreakAutomatically').addEventListener('input', updateAutoContinue);
