@@ -1,5 +1,9 @@
 # TomodoroTimer Changelog
 
+### v1.0.3 - 14.06.24
+- Updated Frederick Schubert link to github page
+- Enhanced readme, added some images
+
 ### v1.0.2 - 14.06.24
 - Reworked & added a few captions
 - Added enable distractions text, which gets shown if you forget how to reenable distractions
