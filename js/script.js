@@ -96,8 +96,10 @@ function toggleDistractionMode(shouldHide) {
     distractions.forEach(distraction => {
         if (typeof shouldHide !== 'undefined') {
             shouldHide ? distraction.classList.add('hidden') : distraction.classList.remove('hidden');
+            isLimitDistractionsMode = shouldHide;
         } else {
             distraction.classList.toggle('hidden');
+            isLimitDistractionsMode = !isLimitDistractionsMode;
         }
     });
 }
@@ -108,6 +110,18 @@ window.addEventListener('keydown', function(e)
 {
 	if (document.activeElement.contentEditable === 'true')
         return;
+
+    if (isLimitDistractionsMode && e.code != 'Space' && e.code != 'KeyP' && e.code != 'KeyR' && e.code != 'KeyS' && e.code != 'KeyO' && e.code != 'KeyD' && e.code != 'KeyF') {
+        let enableDistractionsText = document.getElementById('enable-distractions');
+
+        if (enableDistractionsText.classList.contains('hidden')) {
+            enableDistractionsText.classList.remove('hidden');
+        }
+
+        setInterval(() => {
+            enableDistractionsText.classList.add('hidden');
+        }, 5000);
+    }
 
 	switch (e.code) {
 		case 'Space':

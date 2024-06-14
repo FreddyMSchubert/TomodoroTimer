@@ -119,6 +119,22 @@
         {
             "text": "Hey, it’s me, Tom, your timing companion on the road to productivity!",
             "face": "cute_bear"
+        },
+        {
+            "text": "How do cows greet each other? With a moo-ch appreciated handshake!",
+            "face": "excited"
+        },
+        {
+            "text": "Watt's up? It's Tom, your friendly neighbourhood electrician!",
+            "face": "innocent_face"
+        },
+        {
+            "text": "Have an ice day! That was a snowman's greeting.",
+            "face": "happy_face"
+        },
+        {
+            "text": "How do oceans great each other? They wave!",
+            "face": "zoned"
         }
     ]
 }

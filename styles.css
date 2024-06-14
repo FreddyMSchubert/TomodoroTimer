@@ -34,19 +34,22 @@ a {
 
 
 /* Bottom stuff */
+#shortcuts-overview, #signature, #enable-distractions {
+    margin: 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 #shortcuts-overview {
   text-align: left;
-  margin: 10px;
-  position: absolute;
-  left: 0;
-  bottom: 0;
 }
 #signature {
   text-align: right;
-  margin: 10px;
-  position: absolute;
-  right: 0;
-  bottom: 0;
+}
+#enable-distractions {
+    text-align: center;
+    top: 0;
 }
 
 

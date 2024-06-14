@@ -1,5 +1,9 @@
 # TomodoroTimer Changelog
 
+### v1.0.2 - 14.06.24
+- Reworked & added a few captions
+- Added enable distractions text, which gets shown if you forget how to reenable distractions
+
 ### v1.0.1 - 14.06.24
 - removed todo functionality. let's be real, you'll use an app anyways.
 - moved some screen elements around
