@@ -1,8 +1,12 @@
 # TomodoroTimer Changelog
 
-## v1.0.0 - 08.10.12
+### v1.0.1 - 14.06.24
+- removed todo functionality. let's be real, you'll use an app anyways.
+- moved some screen elements around
+
+## v1.0.0 - 08.10.23
 - Implemented all of the Tom Voicelines
-- Project is feature-complete (for now), released under https://tomodoro.net/
+- Project is feature-complete (for now), released under https://tomodoro.net/ [EDIT: this is no longer active]
 
 ### v0.3.0 - 08.10.23
 - Changed buttons to work with hotkeys instead

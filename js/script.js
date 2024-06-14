@@ -106,7 +106,7 @@ function toggleDistractionMode(shouldHide) {
 
 window.addEventListener('keydown', function(e)
 {
-	if (document.activeElement.contentEditable === 'true' || document.activeElement === taskInput)
+	if (document.activeElement.contentEditable === 'true')
         return;
 
 	switch (e.code) {

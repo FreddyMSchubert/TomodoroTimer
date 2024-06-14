@@ -31,13 +31,6 @@ a {
   justify-content: center;
   align-items: center;
 }
-#todo-container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
 
 
 /* Bottom stuff */
@@ -54,13 +47,6 @@ a {
   position: absolute;
   right: 0;
   bottom: 0;
-}
-#whatispomodoro {
-  text-align: right;
-  margin: 10px;
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 
@@ -83,26 +69,4 @@ a {
   color: var(--first-color);
   padding: 20px;
   z-index: 1000;
-}
-
-
-
-/* TASKS */
-#taskList {
-  width: 300px;
-  margin: 0 auto;
-}
-.task {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  border: 1px solid #ccc;
-  margin-bottom: 5px;
-  cursor: move;
-}
-
-.completed {
-  text-decoration: line-through;
-  color: grey;
 }
